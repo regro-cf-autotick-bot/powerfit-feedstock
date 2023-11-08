@@ -1,5 +1,5 @@
 {% set name = "powerfit" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/tdegeus/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: d8dae7c58a8d188a3757ff1d9301beb6be8004ad1ba204efc64d726c1c5cb73b
+  sha256: 1e7d86a2046b133294cae020ea2f4038db18d3f546b080141835cd969847b215
 
 build:
   number: 0
