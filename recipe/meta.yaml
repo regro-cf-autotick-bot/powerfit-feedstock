@@ -10,7 +10,7 @@ source:
   sha256: 1e7d86a2046b133294cae020ea2f4038db18d3f546b080141835cd969847b215
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
@@ -18,13 +18,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools_scm >=6.2
   run:
     - scipy
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -34,6 +34,7 @@ test:
     - python -c "import powerfit; assert powerfit.version == '{{ version }}'"
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/tdegeus/powerfit
